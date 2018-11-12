@@ -25,7 +25,7 @@ class Create extends Component {
     }
 
     handleClick = () => { //works
-        axios.post("127.0.0.1:8000/api/notes/", this.state)
+        axios.post("https://notepen.herokuapp.com/api/notes/", this.state)
             .then(response => {
                 this.props.history.push("/notes");
             })

@@ -19,14 +19,14 @@ class Login extends Component {
     }
 
     handleClick = (e) => {
-        let promise = axios.post("http://localhost:7000/auth/login", this.state);
+        let promise = axios.post("https://notepen.herokuapp.com/auth/login", this.state);
 
         promise 
             .then(response => {
                 const token = localStorage.setItem("jwt", response.data.token);
                 console.log(token);
                 if(token){
-                    this.props.history.push("/notes");
+                    this.props.history.push("/login");
                 }
                 
             })

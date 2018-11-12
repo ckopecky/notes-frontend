@@ -23,7 +23,7 @@ class Register extends Component {
     }
 
     handleClick = (e) => {
-        let promise = axios.post("http://localhost:7000/auth/register", this.state);
+        let promise = axios.post("https://notepen.herokuapp.com/auth/register", this.state);
 
         promise 
             .then(response => {

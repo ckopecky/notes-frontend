@@ -14,7 +14,7 @@ class NotesList extends Component {
 
     componentDidMount() {
         const token = localStorage.getItem("jwt");
-        let promise = axios.get(`http://localhost:7000/api/notes`, {headers: {Authorization: token}});
+        let promise = axios.get(`https://notepen.herokuapp.com/api/notes`, {headers: {Authorization: token}});
         promise
             .then((response) => {
                 this.setState({

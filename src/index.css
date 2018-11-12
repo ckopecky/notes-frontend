@@ -194,6 +194,7 @@ label {
 
 .button-submit {
   align-self: center;
+  cursor: pointer;
   margin: 30px;
   border: 2px solid gray;
   padding: 10px;
