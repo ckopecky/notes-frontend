@@ -1,210 +1,434 @@
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-  font-family: 'Homemade Apple', cursive;
-  background-image: url(./art-artist-black-and-white-265047.png);
-  background-position-x: 0px;
-  background-position-y: 0px;
-  background-size: cover;
+.copyright {
+  text-align: center;
+  height: 40px;
 }
 
 .header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.title {
-  font-size: 66px;
-}
-
-.subtitle {
-  font-size: 42px;
-  font-family: monospace;
-}
-
-.intro {
-  font-size: 24px;
-}
-.main-container {
+  /* background-image: url('./paper.png'); */
+  background-color: black;
+  background-size: cover;
+  font-family: 'Roboto';
+  font-size: 2.2rem;
   display:flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  transform: rotate(-15deg);
-  height: 80vh;
-  width: 80%;
-  margin-left: 15%;
-}
-.header-link {
-  text-decoration: double underline;
-  color: blue;
-  font-family: 'Homemade Apple', cursive;
-  transform: rotate(2.5deg);
-  margin-bottom: -10px;
-}
-.main-note-container {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
-  height: 450px;
   width: 100%;
-  line-height: 10px;
-  margin-top: -50px;
-  margin-left: 100px;
-  transform:rotate(-5deg);
-}
-
-.note-indiv {
-  width: 600px;
-  height: 250px;
-  line-height: 19px;
-  padding-right:90px;
-}
-
-.house-pic {
-  width:50px;
-  height:auto;
-  transform: rotate(-30deg);
-  margin-top:150px;
-  margin-left: 150px;
-}
-.create-link {
-display:flex;
-justify-content: flex-end;
-transform: rotate(10deg);
-margin-right:200px;
-margin-bottom:250px;
-font-size: 20px;
-color:black;
-text-decoration: underline;
-}
-
-.create-note-wrapper{
-  width: 100%;
-  height: 100vh;
-  margin:185px;
-  margin-left: 225px;
+  height: 30vh;
 
 }
-.input-title {
-  width: 70%;
-  margin-right: 40px;
-  height:30px;
+
+.header-container {
+  /* background: url('./paper.png') repeat center; */
   display:flex;
-  align-items: flex-end;
-}
-.label-title {
-  margin-bottom: 20px;
-  margin-right: 40px;
-  width:100px;
-  height: 30px;
-}
-
-.label-body {
-  margin-right: 40px;
-  margin-top: 20px;
-  width:100px;
-  height: 500px;
-}
-.input-body {
-  width: 70%;
-  height: 40vh;
-}
-.new-note-wrapper {
-  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  width: 80%;
-}
-
-.login-wrapper {
+  align-items:center;
   width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: monospace;
-}
-.register_credentials {
-  height: 30px;
-  width: 100%;
-  margin: 10px;
-  display:flex;
-  align-self:space-evenly;
 }
 
-.input_credentials {
-  height: 30px;
-  width: 100%;
-  margin: 10px;
-  display:flex;
-  align-self:space-evenly;
+#clipped-title1 {
+	background: url(./paper.png) no-repeat center center;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
-.input_box {
-  height: 30px;
-  width: 400px;
-}
-
-.register_box {
-  height: 30px;
-  width: 400px;
-}
-
-.register-wrapper {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: monospace;
-
-}
-
-.login_register {
-  width: 35%;
+body {
+  box-sizing: border-box;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border: 5px double gray;
-  transform:rotate(-10deg);
-  font-size: 1.8em;
+}
+@media (min-width: 0px) and (max-width: 605px){
+  body {
+    max-width: 465px;
+    width: 100%;
+    height: auto;
+    font-family: 'Raleway', sans-serif;
+    background:#eeeeee;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .mobile-nav {
+    height: 50px;
+    box-shadow: 5px 5px 5px black;
+    overflow: hidden;
+  }
+  .hidden-mobile {
+    display: none;
+  }
+  .sidebar-container {
+    display: none;
+  }
+  .main-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+  }
+
+  .header-container {
+    height: auto;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+  .add-new-note {
+    width: 90%;
+    height: 60px;
+    background-color: #00868b;
+    border: 1px solid gray;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .add-new-note:hover {
+    background-color: #40e0d0;
+    color: blueviolet;
+
+
+  }
+
+  .link-style {
+    text-decoration: none;
+    color: whitesmoke;
+    
+  }
+
+  .home-link-style {
+    text-decoration: none;
+    color: black;
+    display:flex;
+    height: 100px;
+  }
+
+  .home-link {
+    display:flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 30px;
+  }
+  .link-create {
+    color: black;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  .link-create:hover {
+    color: blue;
+  }
+
+  .plus-sign {
+    font-size: 3.4rem;
+    margin: 20px;
+    vertical-align: middle;
+  }
+
+ 
+
+  .create-link {
+    vertical-align: middle;
+    width: 80%;
+  }
+  .intro {
+    display: none;
+  }
+
+  .login-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    background-color:#262626;
+    padding: 20px;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+  }
+  .input_container {
+    width: 90%;
+    color: whitesmoke;
+    font-size: 20px;
+    
+
+  }
+  .input_credentials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+  }
+  .input_box {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+  }
+  .button-submit {
+    background-color: #00868b;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .link-header {
+    color: rgb(207, 222, 89);
+    text-decoration-color: black;
+  }
+
+  .login_here {
+    font-family: 'Homemade Apple';
+    color: #dddddd;
+    letter-spacing: 1px;
+  }
+  .register_login {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+ 
+
+  .home-logo {
+    font-size: 2rem;
+    margin-bottom: -10px;
+    font-family: "Homemade Apple";
+    transform: rotate(-20deg);
+    
+  }
+  .house-pic {
+    width: 70px;
+  }
+
+
+
+  .create-header {
+    font-family: "Raleway";
+    font-size: 1.8rem;
+    font-weight: bolder;
+  }
+  .note-body {
+    height: 400px;
+  }
+
+  .note-title {
+    height: 50px;
+  }
+
+  label {
+    font-size: 1.4rem;
+  }
+
+  .new-note-wrapper {
+    margin: 0px 0px 40px ;
+    background-color:#262626;
+    padding:10px;
+    border-radius: 5px;
+    color: whitesmoke;
+  }
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+/* Style the accordion panel. Note: hidden by default */
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+    .collection-of-notes-mobile {
+      color: whitesmoke;
+    }
+    
+    .indiv-note-mobile {
+      background-color:#262626;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 606px) and (max-width: 979px) {
+  body {
+    max-width: 766px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  .intro {
+    display: none;
+  }
+  .navigation {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sidebar-container {
+    display: none;
+  }
+  .main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
+  .collection-of-notes {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: #00868b;
+    display:flex;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    background-color: black;
+    font-family: 'Roboto';
+    font-size: 2.2rem;
+    width: 100%;
+    height: 26%;
+  
+  }
+
+  .link-style {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  .add-new-note {
+    width: 90%;
+    height: 60px;
+    background-color: black;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .add-new-note:hover {
+    background-color: #40e0d0;
+    color: blueviolet;
+
+
+  }
+  .hidden-tablet {
+    display:none;
+  }
+
+  .indiv-note {
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+    width: 40%;
+    box-shadow: 5px 5px 5px black;
+
+  }
+  .please-sign-in {
+    background-color: #dddddd;
+    width: 100%;
+  }
+  .desktop-flex {
+    display:flex;
+    flex-direction: column;
+  }
+
+
+
+  .create-header {
+    font-family: "Raleway";
+    font-size: 1.8rem;
+    font-weight: bolder;
+  }
+  .note-body {
+    height: 400px;
+  }
+
+  .note-title {
+    height: 50px;
+  }
+
+  label {
+    font-size: 1.4rem;
+    width: 200px;
+  }
+
+  .new-note-wrapper {
+    margin: 0px 0px 40px ;
+    background-color: #00868b;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+
+  }
+  .button-submit {
+    background-color: #262626;
+    color: whitesmoke;
+    margin-left: 30px;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .input_box {
+    font-size: 1.6rem;
+  }
+  .accordion {
+    display: none;
+  }
 
 }
 
-.register_here {
-  align-self: center;
-  font-family: 'Homemade Apple';
+@media (min-width: 980px) and (max-width: 1200px) {
+  body {
+    max-width: 1200px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+  }
 
+  .hidden-desktop {
+    display: none;
+  }
+  .accordion {
+    display: none;
+  }
 }
 
-.login_here {
-  align-self: center;
-  font-family: 'Homemade Apple';
-}
 
-label {
-  margin-right: 25px;
-  width: 300px;
-}
 
-.button-submit {
-  align-self: center;
-  cursor: pointer;
-  margin: 30px;
-  border: 2px solid gray;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: paleturquoise;
-}
 
-.register_login {
-  font-family: monospace;
-  font-size: .75em;
-  align-self: center;
-  display: flex;
+
+.sidebar-container {
+
 }

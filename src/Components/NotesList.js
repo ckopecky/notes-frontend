@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "../index.css";
 import axios from 'axios';
-import house from '../house.png'
 
 class NotesList extends Component {
     constructor(props) {
@@ -14,9 +13,11 @@ class NotesList extends Component {
 
     componentDidMount() {
         const token = localStorage.getItem("jwt");
+        console.log("token from CDM", {headers: {Authorization: token}});
         let promise = axios.get(`https://notepen.herokuapp.com/api/notes`, {headers: {Authorization: token}});
         promise
             .then((response) => {
+                console.log(response);
                 this.setState({
                     notes: response.data
                 });
@@ -27,22 +28,19 @@ class NotesList extends Component {
         }
 
         handleSignOut = () => {
-            if (localStorage.getItem('jwt')) {
                 localStorage.removeItem('jwt');
         
                 this.props.history.push('/');
             }
-        };
+        
 
     render() {
         console.log(this.state.notes);
         return (
-            <div>
-                <div className="home-link"><Link exact to="/">
-                <img className="house-pic"src={house} alt="home"/>Notepen</Link></div>
-                <div className="main-note-container">
+                <div className="main-note-container hidden-mobile">
+                    
                 <div>
-                {
+                {/* {
                     localStorage.getItem("jwt") && 
                     <div>
                         <div className="sign-out" onClick={this.handleSignOut}>Sign Out</div>  
@@ -55,8 +53,9 @@ class NotesList extends Component {
                             <h1>Please Sign in to access list of notes</h1>
                         </Link>
                     </div>
-                }
-                <ul className="collection-of-notes">
+                } */}
+                
+                <ul className="collection-of-notes hidden-mobile">
                     {this.state.notes.map(note => {
                         return(
                             <li className="indiv-note" key={note._id}>
@@ -65,11 +64,53 @@ class NotesList extends Component {
                             </li>
                         )}
                     )}
+                        <div className="indiv-note">
+                            <h4>Here is a sample title</h4>
+                            <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
                         </ul>
+                        
+                    </div>
+                    <div className="collection-of-notes-mobile">
+                        <div className="indiv-note">
+                                <h4>Title</h4>
+                                <p>Body</p>
+                        </div>
+                        <div className="indiv-note">
+                            <h4>Title</h4>
+                            <p>Body</p>
+                        </div>
                     </div>
                 </div>
-                <div><Link to="/create"><h4 className="create-link">Create note</h4></Link></div>
-            </div>
+                
         );
 }}
 

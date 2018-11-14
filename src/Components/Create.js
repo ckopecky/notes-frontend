@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "../index.css";
 import uuidv4 from 'uuid/v4';
+
     // const token = localStorage.getItem("jwt")
     // const requestOptions = {
     // headers: {
@@ -40,16 +41,18 @@ class Create extends Component {
             <div className="create-note-app-page">
                 <div className="main-form-container">
                     <div className="create-note-wrapper">
-                        <h3>Create a New Note</h3>
-                        <div className="new-note-wrapper">
-                            <label className="label-title">Note Title:</label>
-                            <input className= "input-title" placeholder="note title" onChange={this.handleChange} name="title" type="text-area"value={this.state.title}/>
-                        </div>
-                        <div className="new-note-wrapper">
-                            <label className="label-body">Note Body:</label>
-                            <textarea className="input-body" placeholder="note content" onChange={this.handleChange} name="content" type="text-area" value={this.state.content}/>
-                        </div>
-                        <div className="button login-button" onClick={this.handleClick}>Save</div>
+                            <h3 className="create-header">Create a New Note:</h3>
+                            <div className="new-note-wrapper">
+                                <div>
+                                    <label className="label-title">Note Title:</label>
+                                    <input className= "input_box note-title" placeholder="note title" onChange={this.handleChange} name="title" type="text-area"value={this.state.title}/>
+                                </div>
+                                <div className="new-note-wrapper">
+                                    <label className="label-body">Note Body:</label>
+                                    <textarea className="input_box note-body" placeholder="note content" onChange={this.handleChange} name="content" type="text-area" value={this.state.content}/>
+                                </div>
+                                <div className="button-submit" onClick={this.handleClick}>Save</div>
+                            </div>
                     </div>
                 </div>
             </div>

@@ -19,14 +19,15 @@ class Login extends Component {
     }
 
     handleClick = (e) => {
-        let promise = axios.post("https://notepen.herokuapp.com/auth/login", this.state);
+        const token = localStorage.getItem("jwt");
+        console.log(token);
+        let promise = axios.post("https://notepen.herokuapp.com/auth/login", this.state, token);
 
         promise 
             .then(response => {
-                const token = localStorage.setItem("jwt", response.data.token);
-                console.log(token);
-                if(token){
-                    this.props.history.push("/login");
+                console.log("response", response);
+                if({headers: {Authorization: token}}){
+                    this.props.history.push("/notes");
                 }
                 
             })
@@ -37,17 +38,17 @@ class Login extends Component {
     render() {
         return (
             <div className="login-wrapper">
-                <div className="login_register">
-                    <h1 className="login_here">Login Here</h1>
+                <h1 className="login_here">{this.props.title}</h1>
+                <div className="input_container">
                     <div className="input_credentials">
                         <label>Username: </label>
                         <input onChange={this.handleChange} name= "username" value={this.state.username} className="input_box" type="text" required/>
                     </div>
                     <div className="input_credentials">
                         <label>Password: </label>
-                        <input onChange={this.handleChange} name="password" value={this.state.password} className="input_box" type="password" required/>
+                        <input onChange={this.handleChange} name="password" value={this.state.password}className="input_box" type="password" required/>
                     </div>
-                    <p className="register_login">No account?  <br/><Link className="header-link" to='/register'>Register here</Link></p>
+                    <p className="register_login">No account?  <br/><Link className="link-header" to='/register'>Register here</Link></p>
                     <div onClick={this.handleClick} className="button-submit">Submit</div>
                 </div>
             </div>

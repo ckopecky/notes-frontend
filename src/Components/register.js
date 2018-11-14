@@ -32,7 +32,7 @@ class Register extends Component {
                 this.props.history.push("/login");
             })
             .catch(err => {
-                console.log(err);
+                console.log("error from handleClick", err);
             });
     }
 
@@ -40,33 +40,34 @@ class Register extends Component {
         console.log(this.state);
 
         return (
-            <div className="register-wrapper">
-                <div className="login_register">
-                    <h1 className="register_here">Register Here</h1>
-                    <div className="register_credentials">
+            <div className="login-wrapper">
+                    <h1 className="login_here">Register Here</h1>
+                    <div className="input_container">
+                    <div className="input_credentials">
                         <label>Username: </label>
-                        <input name="username" value={this.state.username}onChange={this.handleChange}className="register_box" type="text" required/>
+                        <input name="username" value={this.state.username}onChange={this.handleChange}className="input_box" type="text" required/>
                     </div>
-                    <div className="register_credentials">
+                    <div className="input_credentials">
                         <label>First Name: </label>
-                        <input onChange={this.handleChange} name="firstName" value={this.state.firstName}className="register_box" type="text" required/>
+                        <input onChange={this.handleChange} name="firstName" value={this.state.firstName}className="input_box" type="text" required/>
                     </div>
-                    <div className="register_credentials">
+                    <div className="input_credentials">
                         <label>Last Name: </label>
-                        <input onChange={this.handleChange} name="lastName" value={this.state.lastName}className="register_box" type="text" required/>
+                        <input onChange={this.handleChange} name="lastName" value={this.state.lastName}className="input_box" type="text" required/>
                     </div>
-                    <div className="register_credentials">
+                    <div className="input_credentials">
                         <label>Password: </label>
-                        <input onChange={this.handleChange} name="password" value={this.state.password}className="register_box" type="password" required/>
+                        <input onChange={this.handleChange} name="password" value={this.state.password}className="input_box" type="password" required/>
                     </div>
-                    <div className="register_credentials">
+                    <div className="input_credentials">
                         <label>Confirm Password: </label>
-                        <input onChange={this.handleChange} name="confirmedPassword" value={this.state.confirmedPassword} className="register_box" type="password" required/>
+                        <input onChange={this.handleChange} name="confirmedPassword" value={this.state.confirmedPassword} className="input_box" type="password" required/>
                     </div>
-                    <p className="register_login">{` Already have an account? Log in `} <br/> <Link className="header-link" to='/login'>here</Link></p>
+                    <p className="register_login">{` Already have an account? Log in `}  <Link className="link-header" to='/login'><br/>
+                    here</Link></p>
                     <div className="button-submit" onClick={this.handleClick}>Submit</div>
+                    </div>
                 </div>
-            </div>
         );
     }
 }
