@@ -5,7 +5,7 @@ import Notes from  './notesMobile';
 class Accordion extends Component {
   render() {
     return (
-      <div class="accordion" id="accordionExample">
+      <div class="accordion hidden-tablet hidden-desktop" id="accordionExample">
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">

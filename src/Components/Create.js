@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "../index.css";
+import "../css/index.css";
 import uuidv4 from 'uuid/v4';
 
     // const token = localStorage.getItem("jwt")

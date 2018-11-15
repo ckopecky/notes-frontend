@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import "../index.css";
+import "../css/index.css";
 import axios from 'axios';
 
 class NotesList extends Component {

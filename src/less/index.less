@@ -1,0 +1,75 @@
+//color variables
+@black: #000000;
+@onyx: #373E40;
+@dkslategray: #305252;
+@dktangerine: #FCA311;
+@platinum: #E5E5E5;
+//breakpoint variables
+@sizes: {
+    mobile: 320px;
+    tablet: 768px;
+    desktop: 1024px;
+};
+
+.header-container {
+    background-color: @black;
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    @media (min-width:@sizes[tablet]) {
+        height: 25vh;
+        
+    }
+}
+
+.header {
+    background-size: contain;
+    height: 60px;
+    #clipped-title1 a {
+        color: @platinum;
+
+    }
+}
+
+.button-header-container {
+    display:flex;
+    flex-direction:column;
+    margin-top: 50px;
+    @media (min-width:@sizes[tablet]){
+        display:none;
+    }
+    div.register {
+        margin: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px @platinum;
+        background-color: @dktangerine;
+        text-align: center;
+        a {
+            color:black;
+            &:hover {
+                color: blue;
+            }
+        }
+    }
+
+    div.login {
+        margin: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px @platinum;
+        background-color: lighten(@dkslategray, 20%);
+        text-align: center;
+
+        a {
+            color:black;
+            &:hover {
+                color: blue;
+            }
+        }
+    }
+}
+

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../index.css'
+import '../css/index.css';
 import Header from "./Header";
 import NotesList from "./NotesList";
 import Create from "./Create";
@@ -14,12 +14,10 @@ class App extends Component {
   render() {
     return (
       <div className="main-container">
-        <Header className="hidden-mobile" img={Paper}/>
-        <Accordion />
         <div className="desktop-flex">
         <Sidebar className="sidebar-container"/>
         <Switch className="hidden-mobile">
-          <Route exact path="/" component={NotesList}/>
+          <Route exact path="/" component= {Header} img={Paper}/>
           <Route path="/notes" component={NotesList}/>
           <Route path="/create" component={Create} />
           <Route path="/login" component={Login}/>
